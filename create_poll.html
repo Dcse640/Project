@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll - E-Voting Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create_poll.html">Create Poll</a></li>
+                <li><a href="view_polls.html">View Polls</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Create a Poll</h1>
+        <form id="pollForm">
+            <label for="pollTitle">Poll Title:</label><br>
+            <input type="text" id="pollTitle" placeholder="Enter your poll title" required><br><br>
+            
+            <label for="pollOptions">Options (comma-separated):</label><br>
+            <input type="text" id="pollOptions" placeholder="Option1, Option2, Option3" required><br><br>
+            
+            <button type="button" onclick="createPoll()">Create Poll</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Voting Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function createPoll() {
+            const title = document.getElementById('pollTitle').value.trim();
+            const options = document.getElementById('pollOptions').value.trim();
+
+            if (title && options) {
+                alert(`Poll "${title}" created successfully with options: ${options}`);
+                // Backend logic for storing poll data would go here.
+            } else {
+                alert('Please provide a title and options.');
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll - E-Voting Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create_poll.html">Create Poll</a></li>
+                <li><a href="view_polls.html">View Polls</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Create a Poll</h1>
+        <form id="pollForm">
+            <label for="pollTitle">Poll Title:</label><br>
+            <input type="text" id="pollTitle" placeholder="Enter your poll title" required><br><br>
+            
+            <label for="pollOptions">Options (comma-separated):</label><br>
+            <input type="text" id="pollOptions" placeholder="Option1, Option2, Option3" required><br><br>
+            
+            <button type="button" onclick="createPoll()">Create Poll</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Voting Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function createPoll() {
+            const title = document.getElementById('pollTitle').value.trim();
+            const options = document.getElementById('pollOptions').value.trim();
+
+            if (title && options) {
+                alert(`Poll "${title}" created successfully with options: ${options}`);
+                // Backend logic for storing poll data would go here.
+            } else {
+                alert('Please provide a title and options.');
+            }
+        }
+    </script>
+</body>
+</html>

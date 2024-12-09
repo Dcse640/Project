@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Polls - E-Voting Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create_poll.html">Create Poll</a></li>
+                <li><a href="view_polls.html">View Polls</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Available Polls</h1>
+        <div id="pollList">
+            <div class="poll">
+                <h3>Poll Title: "Best Movie of 2024"</h3>
+                <p>Options: Avatar 3, Dune 2, Mission Impossible</p>
+                <a href="vote.html?poll_id=1">Vote Now</a>
+            </div>
+            <div class="poll">
+                <h3>Poll Title: "Top Travel Destination"</h3>
+                <p>Options: Paris, Tokyo, Bali</p>
+                <a href="vote.html?poll_id=2">Vote Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Voting Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

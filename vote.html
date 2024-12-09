@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote - E-Voting Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create_poll.html">Create Poll</a></li>
+                <li><a href="view_polls.html">View Polls</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="pollTitle">Loading Poll...</h1>
+        <form id="voteForm">
+            <div id="optionsContainer">
+                <!-- Poll options will be dynamically added here -->
+            </div>
+            <button type="button" onclick="submitVote()">Submit Vote</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Voting Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simulated data (replace with backend integration)
+        const polls = {
+            1: {
+                title: "Best Movie of 2024",
+                options: ["Avatar 3", "Dune 2", "Mission Impossible"]
+            },
+            2: {
+                title: "Top Travel Destination",
+                options: ["Paris", "Tokyo", "Bali"]
+            }
+        };
+
+        // Function to get query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Load the poll based on the poll_id
+        function loadPoll() {
+            const pollId = getQueryParam('poll_id');
+            const poll = polls[pollId];
+
+            if (poll) {
+                document.getElementById('pollTitle').textContent = poll.title;
+
+                const optionsContainer = document.getElementById('optionsContainer');
+                poll.options.forEach((option, index) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.innerHTML = `
+                        <label>
+                            <input type="radio" name="pollOption" value="${option}" required>
+                            ${option}
+                        </label>
+                    `;
+                    optionsContainer.appendChild(optionElement);
+                });
+            } else {
+                document.getElementById('pollTitle').textContent = "Poll not found.";
+                document.getElementById('voteForm').style.display = 'none';
+            }
+        }
+
+        // Function to handle vote submission
+        function submitVote() {
+            const selectedOption = document.querySelector('input[name="pollOption"]:checked');
+
+            if (selectedOption) {
+                alert(`You voted for: ${selectedOption.value}`);
+                // Backend integration for storing the vote would go here
+            } else {
+                alert('Please select an option before submitting.');
+            }
+        }
+
+        // Initialize the page
+        window.onload = loadPoll;
+    </script>
+</body>
+</html>
